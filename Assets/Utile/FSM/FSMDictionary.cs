@@ -19,18 +19,9 @@ namespace Untils
                 CurrentState = stObj;
                 CurrentState?.Enter();
             }
-        }
-
-        /// <summary>
-        /// Выход из FSM
-        /// </summary>
-        public virtual void Exit<TInterface>(TEnum state) where TInterface : IFSMStateExit<TEnum>
-        {
-            if (States.TryGetValue(state, out IFSMState<TEnum> stObj))
+            else
             {
-                CurrentState = null;
-                var stateModifed = stObj as IFSMStateExit<TEnum>;
-                stateModifed?.ExitFSM();
+                throw new Exception($"[{GetType()}] State '{state}' is not registered");
             }
         }
     }

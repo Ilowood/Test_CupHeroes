@@ -31,10 +31,10 @@
 # Jetbrains Rider personal-layer settings
 *.DotSettings.user
 
-/[Aa]ssets/Plugins/DOTween*
+/[Aa]ssets/Plugins*
+/[Aa]ssets/DOTween*
+/[Aa]ssets/DamageNumbersPro*
 /[Aa]ssets/Plugins/UniTask*
-/[Aa]ssets/NaughtyAttributes*
-/[Aa]ssets/Demigiant*
 /[Aa]ssets/TextMesh Pro*
 
 # Visual Studio cache directory
