@@ -22,10 +22,7 @@ namespace Game
         public void Enter()
         {
             UI.SaveArea(_uiController.SaveArea);
-
-            //тут создать персонажа и закинуть конфиг
-            _playerController.Init(_entityConfig);
-
+            _playerController.Init(_entityConfig).A();
             _fSM.EnterIn(StateGameplay.Cinematic);
         }
 

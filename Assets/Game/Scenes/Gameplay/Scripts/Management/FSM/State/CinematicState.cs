@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using Untils;
 
 namespace Game
@@ -21,10 +22,19 @@ namespace Game
 
         public StateGameplay State => StateGameplay.Cinematic;
 
-        public async void Enter()
+        public void Enter()
         {
-            await _playerController.MovementSystem.SyncWalk(_worldController.StartPosition);
+            AsyncEnter().Forget();
+        }
+
+        public async UniTask AsyncEnter()
+        {
+            await _playerController.MovementSystem.Walk(_worldController.StartPosition);
             _cameraController.SetTrackingTarget(_playerController.transform);
+
+            var testP = _worldController.StartPosition;
+            testP.x += 8;
+            await _playerController.MovementSystem.Run(testP);
             //... появление хп
             _fSM.EnterIn(StateGameplay.StartGame);
         }
