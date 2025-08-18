@@ -61,7 +61,7 @@ namespace Game
                 var distanse = Vector2.Distance(_walePoints[indexPosition].position, _walePoints[indexPosition].position * 1.3f);
                 var position = _walePoints[indexPosition].position * 1.3f;
                 position.x += distanse * 0.3f;
-                await _playerController.MovementSystem.Move(position, 2).SuppressCancellationThrow();
+                await _playerController.MovementSystem.Walk(position).SuppressCancellationThrow();
 
                 await Battle(_levelConfig.Wale[i]);
             }

@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 using Untils;
 
 namespace Game
@@ -29,12 +30,15 @@ namespace Game
 
         public async UniTask AsyncEnter()
         {
-            await _playerController.MovementSystem.Walk(_worldController.StartPosition);
-            _cameraController.SetTrackingTarget(_playerController.transform);
+            var testP = new UnityEngine.Vector3(12, _worldController.StartPosition.y, _worldController.StartPosition.z);
 
-            var testP = _worldController.StartPosition;
-            testP.x += 8;
-            await _playerController.MovementSystem.Run(testP);
+            await _playerController.MovementSystem.CreateSequence()
+                .AccelerateTo(_worldController.StartPosition, m => m.Config.WalkProfile)
+                .Do(() => Debug.Log("Подключение систем"))
+                .Do(() => _cameraController.SetTrackingTarget(_playerController.transform))
+                .DecelerateToStop(testP, m => m.Config.RunProfile)
+                .RunAsync();
+
             //... появление хп
             _fSM.EnterIn(StateGameplay.StartGame);
         }
