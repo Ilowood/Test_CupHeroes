@@ -4,7 +4,7 @@ using Untils;
 
 namespace Game
 {
-    public class CinematicState : IFSMState<StateGameplay>
+    public class CinematicState : ISuspendFSMState<StateGameplay>
     {
         private readonly FSMGameplay _fSM;
 
@@ -46,6 +46,16 @@ namespace Game
         public void Exit()
         {
 
+        }
+
+        public void Suspend()
+        {
+            Debug.Log("Пауза синематика");
+        }
+
+        public void Resume()
+        {
+            Debug.Log("Возобновление синематика");
         }
     }
 }

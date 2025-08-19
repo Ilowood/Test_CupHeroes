@@ -18,6 +18,7 @@ namespace Game
             Container.Bind<EntityController>().FromInstance(_playerController).AsSingle();
 
             Container.BindInterfacesAndSelfTo<InitState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PauseState>().AsSingle();
             Container.BindInterfacesAndSelfTo<CinematicState>().AsSingle();
 
             Container.Bind<FSMGameplay>().AsSingle();
