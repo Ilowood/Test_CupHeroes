@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17bc6828c56ed4898848c97b747afb87, type: 3}
+  m_Name: EnemyConfig
+  m_EditorClassIdentifier: 
+  <Health>k__BackingField:
+    <MaxHealth>k__BackingField: 100
+    <CurrentHealth>k__BackingField: 100
+  <Move>k__BackingField:
+    <WalkProfile>k__BackingField:
+      <Speed>k__BackingField: 1
+      <AccelerationTime>k__BackingField: 1
+      <DecelerationTime>k__BackingField: 0.6
+    <RunProfile>k__BackingField:
+      <Speed>k__BackingField: 2
+      <AccelerationTime>k__BackingField: 2
+      <DecelerationTime>k__BackingField: 1.2
+  <Animation>k__BackingField:
+    <WalkAnimSpeed>k__BackingField: 0.5
+    <RunAnimSpeed>k__BackingField: 1
+  <AttackSystem>k__BackingField: {fileID: 11400000, guid: c48a91146ffe34dc3be11bea4020258a, type: 2}
+  <Prefab>k__BackingField: {fileID: 2495366452422625407, guid: 4b20b8bbac04d45afad8ec5742e35b40, type: 3}

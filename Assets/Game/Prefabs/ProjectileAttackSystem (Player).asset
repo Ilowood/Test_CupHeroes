@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89da48fb624f6408f8425e09c1b1306d, type: 3}
+  m_Name: ProjectileAttackSystem (Player)
+  m_EditorClassIdentifier: 
+  _projectilePrefab: {fileID: 4336148732825312539, guid: 102c43cb4c3484c34a2855ea673bf725, type: 3}
+  _speed: 10
+  _lifeTime: 1.5
