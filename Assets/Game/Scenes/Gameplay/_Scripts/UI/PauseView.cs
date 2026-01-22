@@ -1,21 +1,25 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Untils;
-using Zenject;
 
 namespace Game
 {
     public class PauseView : BaseView
     {
-        [Inject] private FSMGameplay _fSMGameplay;
-
         [SerializeField] private RectTransform _saveArea;
-        [SerializeField] Button _resume;
 
-        public void Init()
+        [Header("Buttons")]
+        [SerializeField] private Button _resume;
+        [SerializeField] private Button _englishLanguage;
+        [SerializeField] private Button _russianLanguage;
+
+        public void Init(PauseState pauseState)
         {
             UI.SaveArea(_saveArea);
-            _resume.onClick.AddListener(() => _fSMGameplay.ExitAndResume());
+
+            _resume.onClick.AddListener(() => pauseState.ExitAndResume());
+            _englishLanguage.onClick.AddListener(() => pauseState.SetEnglishLanguage());
+            _russianLanguage.onClick.AddListener(() => pauseState.SetRussianLanguage());
         }
     }
 }

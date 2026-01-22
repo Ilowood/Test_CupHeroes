@@ -21,7 +21,9 @@ namespace Game
 
         public void Enter()
         {        
-            _hudView.Init(_sceneConfig.Level.Wave.Count);    
+            _hudView.Init(_sceneConfig.Level.Wave.Count); 
+            _hudView.DisableHUD();
+               
             _playerController.Init(_sceneConfig.Player);
             
             _fSM.EnterIn(StateGameplay.CinematicState);

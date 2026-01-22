@@ -67,7 +67,12 @@ namespace Game
 
                 await MoveToPoint(_enemies, levelConfig.Wave[i].TargetOffsets);
 
-                if (i == 0) _playerController.HealthBar.Show();
+                if (i == 0)
+                {
+                    _playerController.HealthBar.Show();
+                    _hudView.EnableHUD();
+                }
+
                 _enemies.ForEach(x => x.HealthBar.Show());
                 
                 _battle = new BattleOrder(_playerController, _enemies);
